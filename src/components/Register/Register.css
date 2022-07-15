@@ -1,0 +1,166 @@
+.register_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.register_left{
+    height: 100%;
+    width: 50%;
+    background-image: url(./microbank.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.register_right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register_right>form{
+    display: flex;
+    flex-direction: column;
+}
+
+.register_right>form>input{
+    width: 300px;
+    height:50px;  
+    background: #E8E8E8;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    margin-bottom: -20px;
+}
+
+.register_right>form>input~#pass_eye{
+    margin-bottom: -5px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -15px;
+    margin-right: 10px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.register_right>form>label{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #1A1A1A;
+    margin-bottom: 5px;
+}
+
+.register_right>form>input[type=date]::-webkit-datetime-edit {
+    color: transparent;
+}
+.register_right>form >input[type=date]:focus::-webkit-datetime-edit {
+    color:#000 ;
+}
+
+
+.register_btn{
+    width: 320px;
+    height: 50px;
+    background: #D90429;
+    box-shadow: 0px 6px 28px 5px rgba(254, 45, 23, 0.3);
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    outline: none;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin: 40px 0 10px 0;
+    font-family: inherit;
+}
+
+.reg_login_txt{
+    font-size: 14px;
+    font-weight: 700;
+    color: #828282;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.reg_login_txt>span{
+    color: red;
+    cursor: pointer;
+}
+
+
+/* LOgin css */
+
+.login_container{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0 0 0 140px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+.login_container>h1{
+    font-size: 32px;
+}
+.login_container>span{
+    color: #828282;
+    font-size: 14px;
+}
+
+.login_container>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 50px;
+}
+
+.login_container>form>label{
+    font-size: 14px;
+    margin: 10px 0 -10px 0;
+}
+.login_container>form>input{
+    width: 300px;
+    height: 50px;  
+    background: #E8E8E8;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+.login_container>form>span.forgot_pass{
+    width: 320px;
+    color: #D90429;
+    text-align: end;
+    font-size: 14px;
+    cursor: pointer;
+}
+.login_container>form>#pass_eye{
+    width: 310px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -34px;
+    margin-right: 0px;
+    font-size: 23px
+}
+
+.login_container>form>button:last-child{
+    margin-top: -2px;
+}
