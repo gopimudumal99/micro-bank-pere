@@ -2,6 +2,7 @@ import React,{useState, FC } from 'react';
 
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 
@@ -19,6 +20,7 @@ const App:FC = () =>{
     {/* <Register isLogin={isLogin} logged={logged}/> */}
     <Navbar/>
     <Dashboard/>
+    <Footer/>
     </div>
   );
 }
