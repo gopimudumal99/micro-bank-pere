@@ -4,7 +4,7 @@ import { MdNotificationsActive } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";
 import microBank from "./Micro Bank.png";
 
-function Navbar() {
+const Navbar:React.FC = ()=> {
   return (
     <nav>
       <div className="logo">
