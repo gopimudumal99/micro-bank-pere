@@ -96,6 +96,7 @@ const Dashboard = () => {
           </div>
       </div>
       </>):(<Details/>)}
+      
     </div>
   );
 };

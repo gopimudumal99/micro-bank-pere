@@ -1,5 +1,5 @@
 import React from 'react'
-import DetailsCard from './DetailsCard'
+import DetailsCard from '../Cards/DetailsCard'
 import DetailsItem from './DetailsItem'
 
 interface detailsItemArr{

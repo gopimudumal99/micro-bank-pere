@@ -3,9 +3,11 @@ import "./Nabar.css";
 import { MdNotificationsActive } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";
 import microBank from "./Micro Bank.png";
+import ProfileCard from "../Cards/ProfileCard";
 
 const Navbar:React.FC = ()=> {
   return (
+    <>
     <nav>
       <div className="logo">
         <img src={microBank} alt="logo" />
@@ -21,6 +23,8 @@ const Navbar:React.FC = ()=> {
         </div>
       </div>
     </nav>
+    <ProfileCard/>
+    </>
   );
 }
 
