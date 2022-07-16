@@ -9,8 +9,10 @@ import ServicesCurrent from "./ServicesCurrent";
 import walletIcon from "../../assets/wallet.png";
 import investmentIcon from "../../assets/investment.png";
 import taxPayIcon from "../../assets/taxPayment.png";
+import Details from "./Details";
 
 const Dashboard = () => {
+  let isSummary = false;
   interface arrInt {
     text1: string;
     text2: string;
@@ -48,6 +50,7 @@ const Dashboard = () => {
         <div>Details</div>
       </div>
       {/* summary */}
+      {isSummary ?(<>
       <div className="summary_container">
         <div className="summary_box1">
           <h2>Summary</h2>
@@ -92,6 +95,7 @@ const Dashboard = () => {
             })}
           </div>
       </div>
+      </>):(<Details/>)}
     </div>
   );
 };
