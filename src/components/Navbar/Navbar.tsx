@@ -6,6 +6,7 @@ import microBank from "./Micro Bank.png";
 import ProfileCard from "../Cards/ProfileCard";
 
 const Navbar:React.FC = ()=> {
+  let isProfile = false;
   return (
     <>
     <nav>
@@ -23,7 +24,7 @@ const Navbar:React.FC = ()=> {
         </div>
       </div>
     </nav>
-    <ProfileCard/>
+   {isProfile && <ProfileCard/>}
     </>
   );
 }
