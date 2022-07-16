@@ -3,9 +3,14 @@ import "./EditProfile.css";
 import ImgLogo from "../../assets/image.png";
 import InputBox from "../utils/Input/InputBox";
 import Button from "../utils/Button/Button";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const EditProfile: React.FC = () => {
+
   return (
+    <>
+    <Navbar/>
     <div className="edit_profile">
       <div>
         <h2>Edit Profile</h2>
@@ -33,6 +38,8 @@ const EditProfile: React.FC = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

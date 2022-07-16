@@ -1,7 +1,10 @@
 import React from "react";
 import "./ProfileCard.css"
+import {useNavigate} from "react-router-dom"
 
-const ProfileCard = () => {
+const ProfileCard:React.FC = () => {
+  let navigate = useNavigate();
+
   return (
     <div className="profile_popup">
       <div className="profile_border">
@@ -15,9 +18,9 @@ const ProfileCard = () => {
           </div>
         </div>
         <ul className="profile_main">
-          <li className="cursor">Edit Profile</li>
+          <li className="cursor" onClick={()=>navigate("/editProfile")}>Edit Profile</li>
           <li className="cursor">Settings</li>
-          <li className="cursor">Logout</li>
+          <li className="cursor" onClick={()=>navigate("/")}>Logout</li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Nabar.css";
 import { MdNotificationsActive } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -6,7 +6,7 @@ import microBank from "./Micro Bank.png";
 import ProfileCard from "../Cards/ProfileCard";
 
 const Navbar:React.FC = ()=> {
-  let isProfile = false;
+  const [isProfile,setIsProfile] = useState(false)
   return (
     <>
     <nav>
@@ -18,8 +18,8 @@ const Navbar:React.FC = ()=> {
         <div className="notifyIcon">
           <MdNotificationsActive />
         </div>
-        <div className="profileImg">GM</div>
-        <div className="downLogo">
+        <div  className="profileImg">GM</div>
+        <div className="downLogo" onClick={()=>setIsProfile(!isProfile)}>
           <AiFillCaretDown />
         </div>
       </div>
