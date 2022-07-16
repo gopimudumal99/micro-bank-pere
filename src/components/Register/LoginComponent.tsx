@@ -1,26 +1,29 @@
 import React from 'react'
-import {AiFillEye} from 'react-icons/ai'
+// import {AiFillEye} from 'react-icons/ai'
+import Button from '../utils/Button/Button'
+import InputBox from '../utils/Input/InputBox'
+import {useNavigate} from 'react-router-dom'
 
-interface props{
-    logged:()=>void
-}
+const LoginComponent:React.FC = () =>{
+    let navigate = useNavigate()
 
-const LoginComponent:React.FC<props> = ({logged}) =>{
     return <>
+    <div className='register_container'>
+        <div className='register_left'> </div>
     <div className="login_container">
         <h1>Login</h1>
         <span>Please login to your account</span>
         <br />
         <form action="">
-            <label htmlFor="email_phone">Email or Phone</label>
-            <input type="text" name="email_phone" id="emial_phone" />
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" />
-            <div id='pass_eye'>{<AiFillEye/>}</div>
+            <InputBox type={'email'} id={"email_phone"} label={'Email or Phone'} isPass={false}/>
+            <InputBox type={'password'} id={"password"} label={'Password'} isPass={true}/>
             <span className='forgot_pass'>Forgot Password?</span>
-        <button type='submit' className='register_btn'>Login</button>
+            <div onClick={()=>navigate("/dashboard")}>
+            <Button content={'Login'}/>
+            </div>
         </form>
-        <div className='reg_login_txt'>Dont't have an account? <span onClick={logged}>Create an Account</span></div>
+        <div className='reg_login_txt'>Dont't have an account? <span onClick={()=>navigate("/")}>Create an Account</span></div>
+    </div>
     </div>
     </>
 }

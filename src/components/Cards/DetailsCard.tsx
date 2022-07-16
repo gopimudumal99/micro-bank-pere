@@ -2,27 +2,29 @@ import React from "react";
 import CrossIcon from "../../assets/cross.png";
 import {MdDownload} from 'react-icons/md';
 
-const DetailsCard = () => {
+const DetailsCard:React.FC<any> = ({transDetails,hideShowDetails}) => {
   return (
     <div className="details_card">
       <div className="transaction_info">
         <div className="transaction_header">
           <h3>Transaction Details</h3>
-          <img className="cursor" src={CrossIcon} alt="" />
+          <div className="cursor" onClick={()=>hideShowDetails()}>
+          <img  src={CrossIcon} alt="" />
+          </div>
         </div>
         <div className="transaction_main">
           <div className="transaction_left">
             <div className="transaction_left_item">
               <div>Transaction ID</div>
-              <div>201100203911</div>
+              <div>{transDetails.id}</div>
             </div>
             <div className="transaction_left_item">
               <div>Date</div>
-              <div>22-09-2021</div>
+              <div>{transDetails.date}</div>
             </div>
             <div className="transaction_left_item">
               <div>Status</div>
-              <div>Approved</div>
+              <div className={transDetails.status==="Approved"? 'status_green': 'status_red'}>{transDetails.status}</div>
             </div>
             <div className="transaction_left_item">
               <div>Comment</div>
@@ -36,7 +38,7 @@ const DetailsCard = () => {
             </div>
             <div className="transaction_right_item">
               <div>Amount</div>
-              <div>1,780</div>
+              <div>{transDetails.amount}</div>
             </div>
             <div className="transaction_right_item">
                 <div>Action</div>

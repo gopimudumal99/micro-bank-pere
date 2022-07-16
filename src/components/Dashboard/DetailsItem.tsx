@@ -2,16 +2,23 @@ import React from "react";
 import { AiFillEye } from "react-icons/ai";
 import { MdDownload } from "react-icons/md";
 
+interface  item{
+  id:number,
+  date:string,
+  amount:string,
+  status:"Approved"|"Rejected"
+}
 interface props{
   item:{
     id:number,
     date:string,
     amount:string,
     status:"Approved"|"Rejected"
-  }
+  },
+  showDetails: (item:item) => void
 }
 
-const DetailsItem: React.FC<props> = ({item}) => {
+const DetailsItem: React.FC<props> = ({item,showDetails}) => {
   return (
     <ul className="details_main">
       <li>{item.id}</li>
@@ -19,7 +26,7 @@ const DetailsItem: React.FC<props> = ({item}) => {
       <li>{item.amount}</li>
       <li className={item.status==="Approved"? 'status_green': 'status_red'}>{item.status}</li>
       <li>
-        <span className="cursor">
+        <span className="cursor" onClick={()=>{showDetails(item)}}>
         <AiFillEye size={22} color="red" /> &nbsp;
         </span>
         <span className="cursor">

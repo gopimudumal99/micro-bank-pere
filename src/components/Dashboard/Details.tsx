@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DetailsCard from '../Cards/DetailsCard'
 import DetailsItem from './DetailsItem'
+import {detailsArr} from "../../Data/data"
+interface Item {
+      id:number,
+      date:string,
+      amount:string,
+      status:"Approved"|"Rejected"
+  }
 
-interface detailsItemArr{
-    id:number,
-    date:string,
-    amount:string,
-    status:"Approved"|"Rejected"
-}
-
-let detailsArr:detailsItemArr[] = [
-{id:2011002039111,date:"22-09-2021",amount:"1780",status:"Approved"},
-{id:2011002039112,date:"19-09-2021",amount:"1890",status:"Approved"},
-{id:2011002039113,date:"20-08-2021",amount:"5500",status:"Rejected"},
-{id:2011002039114,date:"12-07-2021",amount:"2590",status:"Approved"},
-{id:2011002039113,date:"08-07-2021",amount:"2800",status:"Rejected"},
-
-]
 const Details:React.FC = () => {
+  const [showTransaction,setShowTransaction] = useState<boolean>(false)
+  const [transDetails,setTransDetails] = useState<any>({})
 
+
+  const showDetails = (item:Item)=>{
+    if(!showTransaction){
+      setTransDetails(item)
+      setShowTransaction(true)
+    }
+  }
+
+  const hideShowDetails = ()=>{
+    setShowTransaction(false)
+  }
 
   return (
     <div className='details_container'>
@@ -31,10 +36,9 @@ const Details:React.FC = () => {
         </ul>
         
         {detailsArr.map((item) => {
-            return <DetailsItem item={item}/>
+            return <DetailsItem item={item} showDetails={showDetails}/>
         })}
-        <DetailsCard/>
-
+      {showTransaction && <DetailsCard transDetails={transDetails} hideShowDetails={hideShowDetails}/>}
     </div>
   )
 }

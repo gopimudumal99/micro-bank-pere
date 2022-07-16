@@ -1,53 +1,30 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Dashboard.css";
 import SummaryAccnt from "./SummaryAccnt";
-import bank from "../../assets/bank.png";
-import payroll from "../../assets/payroll.png";
-import paymentIcon from "../../assets/payment.png";
 import ServicesCurrent from "./ServicesCurrent";
-
-import walletIcon from "../../assets/wallet.png";
-import investmentIcon from "../../assets/investment.png";
-import taxPayIcon from "../../assets/taxPayment.png";
+import Navbar from "../Navbar/Navbar";
 import Details from "./Details";
+import Footer from "../Footer/Footer";
+import {arr,current_services,available_services} from "../../Data/data"
 
-const Dashboard = () => {
-  let isSummary = false;
-  interface arrInt {
-    text1: string;
-    text2: string;
+const Dashboard:React.FC = () => {
+  const [isSummary,setIsSummary] = useState<boolean>(true);
+
+  const handleDetails = ()=> {
+      setIsSummary(false)
   }
 
-  interface ServiceIconArr {
-    icon: any;
-    text: string;
+  const handleSummary = () =>{
+    setIsSummary(true)
   }
 
-  let arr: arrInt[] = [
-    { text1: "Account Number", text2: "67238744" },
-    { text1: "Income", text2: "$20,00,000" },
-    { text1: "Spends", text2: "$11,00,000" },
-  ];
-
-  let current_services: ServiceIconArr[] = [
-    { icon: bank, text: "Current Account" },
-    { icon: payroll, text: "Payroll" },
-    { icon: paymentIcon, text: "Payment" },
-  ];
-
-  let available_services: ServiceIconArr[] = [
-    { icon: walletIcon, text: "Wallet" },
-    { icon: investmentIcon, text: "Investments" },
-    { icon: taxPayIcon, text: "Tax Payment" },
-    { icon: paymentIcon, text: "Loan" },
-  ];
-
-  return (
+  return (<>
+    <Navbar/>
     <div className="dashboard">
       <h4>Dashboard</h4>
       <div className="summary_details">
-        <div className="active">Summarry</div>
-        <div>Details</div>
+        <div className={isSummary?"active":""} onClick={handleSummary} >Summarry</div>
+        <div className={isSummary?"":"active"} onClick={handleDetails} >Details</div>
       </div>
       {/* summary */}
       {isSummary ?(<>
@@ -96,8 +73,9 @@ const Dashboard = () => {
           </div>
       </div>
       </>):(<Details/>)}
-      
     </div>
+    <Footer/>
+    </>
   );
 };
 

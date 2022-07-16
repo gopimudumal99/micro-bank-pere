@@ -68,33 +68,4 @@
   gap: 15px;
 }
 
-.input_container {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.input_container > .input_box {
-  width: 320px;
-  height: 50px;
-  background: #e8e8e8;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-}
-
-.input_container > label{
- font-size: 14px;
- font-weight: 700; 
-}
-
-.eyeIcon{
-  position: absolute;
-  right: -100px;
-  bottom: 6px;
-}
-
 
