@@ -1,9 +1,43 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "full_name": "gopi mudumal",
+      "date_incorporation": "23-7-2022",
+      "email": "gopimudumal99@gmail.com",
+      "password": "gopi@123"
+    },
+    {
+      "id": "2",
+      "full_name": "gopi",
+      "email": "g@g.com",
+      "date_incorporation": "21-07-2022",
+      "password": "g123"
+    },
+    {
+      "id": "17c2abcf-c086-43b4-880c-264c84326469",
+      "full_name": "ram charan",
+      "date_incorporation": "2022-07-12",
+      "email": "ram@gmail.com",
+      "password": "123",
+      "confirm_pass": "123"
+    }
+  ]
+}

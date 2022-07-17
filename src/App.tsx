@@ -1,4 +1,4 @@
-import React,{FC } from 'react';
+import React,{FC, useState } from 'react';
 
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -9,6 +9,8 @@ import LoginComponent from './components/Register/LoginComponent';
 
 
 const App:FC = () =>{
+
+  const [data,setData] = useState({})
 
   return (
     <div className="App">

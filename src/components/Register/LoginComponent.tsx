@@ -15,8 +15,8 @@ const LoginComponent:React.FC = () =>{
         <span>Please login to your account</span>
         <br />
         <form action="">
-            <InputBox type={'email'} id={"email_phone"} label={'Email or Phone'} isPass={false}/>
-            <InputBox type={'password'} id={"password"} label={'Password'} isPass={true}/>
+            <InputBox type={'email'} id={"email_phone"} label={'Email or Phone'} isPass={false} value={""}handleChange={()=>{}}/>
+            <InputBox type={'password'} id={"password"} label={'Password'} isPass={true} value={""} handleChange={()=>{}}/>
             <span className='forgot_pass'>Forgot Password?</span>
             <div onClick={()=>navigate("/dashboard")}>
             <Button content={'Login'}/>

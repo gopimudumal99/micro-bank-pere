@@ -17,9 +17,9 @@
   outline: none;
 }
 
-input[type="date"]::-webkit-datetime-edit {
+/* input[type="date"]::-webkit-datetime-edit {
   color: transparent;
-}
+} */
 input[type="date"]:focus::-webkit-datetime-edit {
   color: #000;
 }

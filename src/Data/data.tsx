@@ -5,6 +5,14 @@ import walletIcon from "../assets/wallet.png";
 import investmentIcon from "../assets/investment.png";
 import taxPayIcon from "../assets/taxPayment.png";
 
+export interface UserData {
+  id:string;
+  full_name:string;
+  date_incorporation:string;
+  email:string;
+  password:string;
+  confirm_pass:string;
+}
 interface arrInt {
   text1: string;
   text2: string;
