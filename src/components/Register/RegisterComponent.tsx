@@ -3,7 +3,7 @@ import InputBox from '../utils/Input/InputBox'
 import Button from "../utils/Button/Button";
 import {useNavigate} from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
-import {postData,getUserByID,getUserByLogin} from "../../api/apis"
+import {postData} from "../../api/apis"
 import {UserData} from "../../Data/data"
 
 
@@ -14,7 +14,7 @@ const RegisterComponent:React.FC = () =>{
     const [state,setState] = useState<UserData>(infoUser)
     let navigate = useNavigate()
 
-    const handleClick = async(e:FormEvent) =>{
+    const handleSubmit = async(e:FormEvent) =>{
         e.preventDefault();
         if(state.password === state.confirm_pass){
             postData(state)
@@ -23,6 +23,7 @@ const RegisterComponent:React.FC = () =>{
             alert(" Password not match please try once again! ")
         }
     }
+
     const handleChange = (e:ChangeEvent)=>{
         const {value,name} = e.target as HTMLInputElement
         setState({
@@ -34,7 +35,7 @@ const RegisterComponent:React.FC = () =>{
     return <>
     <div className='register_right'>
         <h1>Create an Account</h1>
-        <form action="" onSubmit={handleClick}>
+        <form action="" onSubmit={handleSubmit}>
             <InputBox type={"text"} label={"Full Name"} id={"full_name"} isPass={false} value={state.full_name} handleChange={handleChange}/>
             <InputBox type={"date"} label={"Date of Incorporation"} id={"date_incorporation"} isPass={false} value={state.date_incorporation} handleChange={handleChange}/>
             <InputBox type={"email"} label={"Email"} id={"email"} isPass={false} value={state.email} handleChange={handleChange}/>
@@ -42,7 +43,7 @@ const RegisterComponent:React.FC = () =>{
             <InputBox type={"password"} label={"Confirm Password"} id={"confirm_pass"} isPass={true} value={state.confirm_pass} handleChange={handleChange}/>
             <Button content='Create an Account'/>
         </form>
-        <div className='reg_login_txt'>Already have an account? <span>Login</span></div>
+        <div className='reg_login_txt'>Already have an account? <span onClick={()=>navigate("/login")}>Login</span></div>
     </div>
     </>
 }

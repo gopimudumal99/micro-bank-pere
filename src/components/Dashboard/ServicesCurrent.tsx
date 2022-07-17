@@ -17,9 +17,9 @@ const ServicesCurrent:React.FC<props> = ({icon,text,isStar}) => {
     </div>
     <h4>{text}</h4>
     { isStar && <div className="star_container">
-      {starArr.map((star) => {
+      {starArr.map((star,index) => {
         return (
-          <div className="starIcon " >
+          <div className="starIcon " key={index} >
             <AiOutlineStar color='gray' />
           </div>
         );

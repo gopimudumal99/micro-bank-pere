@@ -46,9 +46,9 @@ const Dashboard:React.FC = () => {
         <div className="current_services">
           <h2>Curren Services</h2>
           <div className="services">
-            {current_services.map((service) => {
+            {current_services.map((service,index) => {
               return (
-                <ServicesCurrent
+                <ServicesCurrent key={index}
                   icon={service.icon}
                   text={service.text}
                   isStar={true}
@@ -61,9 +61,9 @@ const Dashboard:React.FC = () => {
       <div className="current_services">
         <h2>Available Services</h2>
         <div className="services">
-            {available_services.map((service) => {
+            {available_services.map((service,index) => {
               return (
-                <ServicesCurrent
+                <ServicesCurrent key={index}
                   icon={service.icon}
                   text={service.text}
                   isStar={false}

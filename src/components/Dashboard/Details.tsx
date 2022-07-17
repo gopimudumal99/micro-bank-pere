@@ -35,8 +35,8 @@ const Details:React.FC = () => {
             <li>Action</li>
         </ul>
         
-        {detailsArr.map((item) => {
-            return <DetailsItem item={item} showDetails={showDetails}/>
+        {detailsArr.map((item,index) => {
+            return <DetailsItem key={index} item={item} showDetails={showDetails}/>
         })}
       {showTransaction && <DetailsCard transDetails={transDetails} hideShowDetails={hideShowDetails}/>}
     </div>

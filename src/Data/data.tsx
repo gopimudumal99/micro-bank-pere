@@ -5,6 +5,10 @@ import walletIcon from "../assets/wallet.png";
 import investmentIcon from "../assets/investment.png";
 import taxPayIcon from "../assets/taxPayment.png";
 
+export interface UserCredential{
+  email_phone:string;
+  password:string;
+}
 export interface UserData {
   id:string;
   full_name:string;

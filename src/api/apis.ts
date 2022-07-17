@@ -1,5 +1,5 @@
 import axios from "axios";
-import {UserData} from "../Data/data"
+import {UserData,UserCredential} from "../Data/data"
 
 export const postData = async (data:UserData) => {
  await axios.post("http://localhost:3001/users", data);
@@ -13,10 +13,9 @@ export const getUserByID = async () =>{
     console.log(data)
 }
 
-export const getUserByLogin = async () =>{
-    let data = {email:"g@g.com",password:"g023"}
+export const getUserByLogin = async (data:UserCredential) =>{
     let res = await axios.get("http://localhost:3001/users")
     let users = res.data
-    let user =  users.filter((user:any)=>user.email === data.email && user.password ===data.password)
+    let user =  users.filter((user:any)=>user.email === data.email_phone && user.password ===data.password)
     return user
 }

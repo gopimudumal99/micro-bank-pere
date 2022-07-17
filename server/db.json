@@ -38,6 +38,14 @@
       "email": "ram@gmail.com",
       "password": "123",
       "confirm_pass": "123"
+    },
+    {
+      "id": "4a24c5e3-ce90-41c3-9f5d-34d0cc59da07",
+      "full_name": "g",
+      "date_incorporation": "2022-12-12",
+      "email": "g@g.com",
+      "password": "123",
+      "confirm_pass": "123"
     }
   ]
 }
