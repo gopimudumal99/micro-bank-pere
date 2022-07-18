@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import {UserDataBase} from "../Data/data"
+
 import {updateRating} from "../api/apis"
 
 const initialState: UserDataBase ={ id: "", full_name: "", email: "", date_incorporation: "", password: "",rating:{current_account:0,payroll:0,payment:0} }
