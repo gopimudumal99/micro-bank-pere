@@ -42,6 +42,19 @@
         "payroll": 1,
         "payment": 5
       }
+    },
+    {
+      "id": "16313af7-8d55-4f2c-b5b1-1178dccbd712",
+      "full_name": "gopi",
+      "date_incorporation": "2022-07-18",
+      "email": "gopi@gmail.com",
+      "password": "123",
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 0,
+        "payroll": 0,
+        "payment": 0
+      }
     }
   ]
 }

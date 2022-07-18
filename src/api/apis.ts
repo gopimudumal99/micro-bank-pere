@@ -32,7 +32,6 @@ interface Rating{
 }
 
 export const updateRating = async (state:Rating,id:string)=>{
-  // if(type === "current_account"){
     await axios.patch(`http://localhost:3001/users/${id}`,{
       rating:{
         current_account:state.current_account,
@@ -41,17 +40,4 @@ export const updateRating = async (state:Rating,id:string)=>{
       }
     })
   }
-  // else if(type === "payroll"){
-  //   await axios.patch(`http://localhost:3001/users/${id}`,{
-  //     rating:{
-  //       payroll:rate
-  //     }
-  //   })
-  // }else if(type === "payment"){
-  //   await axios.patch(`http://localhost:3001/users/${id}`,{
-  //     rating:{
-  //       payment:rate
-  //     }
-  //   })
-  // }
-// }
+
