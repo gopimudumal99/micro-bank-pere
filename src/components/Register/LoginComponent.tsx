@@ -1,13 +1,15 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-// import {AiFillEye} from 'react-icons/ai'
 import Button from '../utils/Button/Button';
 import InputBox from '../utils/Input/InputBox';
 import {useNavigate} from 'react-router-dom';
 import {getUserByLogin} from "../../api/apis";
 import {UserCredential} from "../../Data/data";
+import {useDispatch } from 'react-redux';
+import{addProfile} from "../../redux/ProfileSlice";
 
 const LoginComponent:React.FC = () =>{
     let user:UserCredential = {email_phone:"",password:""}
+    const dispatch = useDispatch();
 
     const [state,setState] = useState<UserCredential>(user)
 
@@ -25,8 +27,8 @@ const LoginComponent:React.FC = () =>{
         e.preventDefault()
        let user = await getUserByLogin(state)
        if(user.length > 0){
-           console.log(user)
-           navigate("/dashboard")
+            dispatch(addProfile(user[0]))
+            navigate("/dashboard")
        }else{
         alert("invalid credential please try again")
        }

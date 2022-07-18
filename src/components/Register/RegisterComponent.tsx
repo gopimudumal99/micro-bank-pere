@@ -20,7 +20,7 @@ const RegisterComponent:React.FC = () =>{
             postData(state)
             navigate("/login")
         }else{
-            alert(" Password not match please try once again! ")
+            alert(" Password not match please try again! ")
         }
     }
 

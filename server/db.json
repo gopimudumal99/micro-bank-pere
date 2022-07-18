@@ -18,34 +18,30 @@
   },
   "users": [
     {
-      "id": 1,
-      "full_name": "gopi mudumal",
-      "date_incorporation": "23-7-2022",
+      "id": "5545eeb4-cf10-4aee-91cb-a2895add04c9",
+      "full_name": "shiva",
+      "date_incorporation": "2022-07-18",
+      "email": "shiva@gmail.com",
+      "password": "123",
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 3,
+        "payroll": 2,
+        "payment": 1
+      }
+    },
+    {
+      "id": "f9f5aa26-6e16-4356-958a-44735d52489b",
+      "full_name": "Gopi Mudumal",
+      "date_incorporation": "2022-07-18",
       "email": "gopimudumal99@gmail.com",
-      "password": "gopi@123"
-    },
-    {
-      "id": "2",
-      "full_name": "gopi",
-      "email": "g@g.com",
-      "date_incorporation": "21-07-2022",
-      "password": "g123"
-    },
-    {
-      "id": "17c2abcf-c086-43b4-880c-264c84326469",
-      "full_name": "ram charan",
-      "date_incorporation": "2022-07-12",
-      "email": "ram@gmail.com",
       "password": "123",
-      "confirm_pass": "123"
-    },
-    {
-      "id": "4a24c5e3-ce90-41c3-9f5d-34d0cc59da07",
-      "full_name": "g",
-      "date_incorporation": "2022-12-12",
-      "email": "g@g.com",
-      "password": "123",
-      "confirm_pass": "123"
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 0,
+        "payroll": 0,
+        "payment": 0
+      }
     }
   ]
 }

@@ -49,14 +49,16 @@ nav > .nav-right {
 .profileImg {
   width: 25px;
   height: 25px;
-  padding: 8px;
+  padding:8px 8px 8px 8px;
   color: white;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 25px;
   font-weight: 400;
   background-color: #d90429;
   border-radius: 50%;
   cursor: pointer;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

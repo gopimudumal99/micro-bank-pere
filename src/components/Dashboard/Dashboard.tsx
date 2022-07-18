@@ -7,7 +7,10 @@ import Details from "./Details";
 import Footer from "../Footer/Footer";
 import {arr,current_services,available_services} from "../../Data/data"
 
+
 const Dashboard:React.FC = () => {
+  
+
   const [isSummary,setIsSummary] = useState<boolean>(true);
 
   const handleDetails = ()=> {
@@ -32,8 +35,8 @@ const Dashboard:React.FC = () => {
         <div className="summary_box1">
           <h2>Summary</h2>
           <div className="sumary_acnt">
-            {arr.map((obj) => {
-              return <SummaryAccnt text1={obj.text1} text2={obj.text2} />;
+            {arr.map((obj,index) => {
+              return <SummaryAccnt key={index} text1={obj.text1} text2={obj.text2} />;
             })}
           </div>
         </div>
@@ -52,6 +55,7 @@ const Dashboard:React.FC = () => {
                   icon={service.icon}
                   text={service.text}
                   isStar={true}
+                  rating={service.rating}
                 />
               );
             })}
@@ -67,6 +71,7 @@ const Dashboard:React.FC = () => {
                   icon={service.icon}
                   text={service.text}
                   isStar={false}
+                  rating={0}
                 />
               );
             })}

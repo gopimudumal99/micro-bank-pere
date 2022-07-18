@@ -2,7 +2,8 @@ import axios from "axios";
 import {UserData,UserCredential} from "../Data/data"
 
 export const postData = async (data:UserData) => {
- await axios.post("http://localhost:3001/users", data);
+  const user = Object.assign(data,{rating:{current_account:0,payroll:0,payment:0}})
+ await axios.post("http://localhost:3001/users", user);
   alert("create account successfully")
 };
 
@@ -11,7 +12,7 @@ export const getUserByID = async () =>{
     let res = await axios.get(`http://localhost:3001/users/${2}`)
     let data = res.data
     console.log(data)
-}
+}   
 
 export const getUserByLogin = async (data:UserCredential) =>{
     let res = await axios.get("http://localhost:3001/users")

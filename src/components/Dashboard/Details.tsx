@@ -13,7 +13,6 @@ const Details:React.FC = () => {
   const [showTransaction,setShowTransaction] = useState<boolean>(false)
   const [transDetails,setTransDetails] = useState<any>({})
 
-
   const showDetails = (item:Item)=>{
     if(!showTransaction){
       setTransDetails(item)

@@ -1,31 +1,21 @@
 import React from 'react'
-import { AiOutlineStar } from "react-icons/ai";
-
+import StarRating from '../utils/Star/StarRating';
 interface props{
     icon:any;
     text:string;
     isStar:boolean;
+    rating:number 
 }
 
-
-const ServicesCurrent:React.FC<props> = ({icon,text,isStar}) => {
-  let starArr = [1, 2, 3, 4, 5];
+const ServicesCurrent:React.FC<props> = ({icon,text,isStar,rating}) => {
+  
   return (
     <div className="current_service">
     <div className="service_logo">
       <img src={icon} alt="" />
     </div>
     <h4>{text}</h4>
-    { isStar && <div className="star_container">
-      {starArr.map((star,index) => {
-        return (
-          <div className="starIcon " key={index} >
-            <AiOutlineStar color='gray' />
-          </div>
-        );
-      })}
-    </div>
-  }
+  {isStar && <StarRating rating={rating}/>}
   </div>
   )
 }

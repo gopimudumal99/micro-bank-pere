@@ -9,6 +9,19 @@ export interface UserCredential{
   email_phone:string;
   password:string;
 }
+
+export interface UserDataBase{
+  id:string;
+  full_name:string;
+  date_incorporation:string;
+  email:string;
+  password:string;
+  rating:{
+    current_account:number;
+    payroll:number;
+    payment:number;
+  }
+}
 export interface UserData {
   id:string;
   full_name:string;
@@ -20,6 +33,12 @@ export interface UserData {
 interface arrInt {
   text1: string;
   text2: string;
+}
+
+interface CurrentServiceIconArr {
+  icon: any;
+  text: string;
+  rating:number;
 }
 
 interface ServiceIconArr {
@@ -40,10 +59,10 @@ export const arr: arrInt[] = [
   { text1: "Spends", text2: "$11,00,000" },
 ];
 
-export const current_services: ServiceIconArr[] = [
-  { icon: bank, text: "Current Account" },
-  { icon: payroll, text: "Payroll" },
-  { icon: paymentIcon, text: "Payment" },
+export const current_services: CurrentServiceIconArr[] = [
+  { icon: bank, text: "Current Account",rating:3},
+  { icon: payroll, text: "Payroll",rating:2 },
+  { icon: paymentIcon, text: "Payment",rating:1 },
 ];
 
 export const available_services: ServiceIconArr[] = [
