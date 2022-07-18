@@ -3,9 +3,18 @@ import "./ProfileCard.css"
 import {useNavigate} from "react-router-dom"
 import { useSelector } from 'react-redux';
 import {RootState} from "../../redux/store"
+import {useDispatch} from "react-redux"
+import {logout} from "../../redux/ProfileSlice"
+
 const ProfileCard:React.FC = () => {
+  let dispatch = useDispatch()
   let navigate = useNavigate();
   const user = useSelector((state: RootState) => state)
+
+  const logOut = ()=>{
+    dispatch(logout())
+    navigate("/")
+  }
 
   return (
     <div className="profile_popup">
@@ -22,7 +31,7 @@ const ProfileCard:React.FC = () => {
         <ul className="profile_main">
           <li className="cursor" onClick={()=>navigate("/editProfile")}>Edit Profile</li>
           <li className="cursor">Settings</li>
-          <li className="cursor" onClick={()=>navigate("/")}>Logout</li>
+          <li className="cursor" onClick={logOut}>Logout</li>
         </ul>
       </div>
     </div>

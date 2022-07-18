@@ -6,9 +6,27 @@ import Navbar from "../Navbar/Navbar";
 import Details from "./Details";
 import Footer from "../Footer/Footer";
 import {arr,current_services,available_services} from "../../Data/data"
+import { addCurrentBankRating, addPaymentRating, addPayrollRating } from "../../redux/ProfileSlice";
+import { useDispatch,useSelector } from "react-redux";
+import {RootState} from "../../redux/store"
 
 
 const Dashboard:React.FC = () => {
+  const ratingArr = useSelector((state: RootState) => state.rating)
+  
+  const dispatch = useDispatch()
+
+  const bankDispatch = (rating:number)=>{
+    dispatch(addCurrentBankRating(rating))
+  }
+
+  const payrollDispatch = (rating:number)=>{
+    dispatch(addPayrollRating(rating))
+  }
+
+  const paymentDispatch = (rating:number)=>{
+    dispatch(addPaymentRating(rating))
+  }
   
 
   const [isSummary,setIsSummary] = useState<boolean>(true);
@@ -55,7 +73,8 @@ const Dashboard:React.FC = () => {
                   icon={service.icon}
                   text={service.text}
                   isStar={true}
-                  rating={service.rating}
+                  rating={service.text === "Current Account"?ratingArr.current_account:service.text==="Payroll"?ratingArr.payroll:ratingArr.payment}
+                  dispatchFun={service.text === "Current Account"?bankDispatch:service.text==="Payroll"?payrollDispatch:paymentDispatch}
                 />
               );
             })}
@@ -72,6 +91,7 @@ const Dashboard:React.FC = () => {
                   text={service.text}
                   isStar={false}
                   rating={0}
+                  dispatchFun={()=>{}}
                 />
               );
             })}

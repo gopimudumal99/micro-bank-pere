@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./StarRating.css";
 import {AiFillStar} from 'react-icons/ai'
-
 //&#9733; star hrml
 interface props{
-  rating:number
+  rating:number,
+  ratingFun:(rating:number)=>void
 }
-const StarRating:React.FC<props> = ({rating}) => {
+const StarRating:React.FC<props> = ({rating,ratingFun}) => {
   const [ratingValue, setRatingValue] = useState(rating);
   const [hover, setHover] = useState(0);
-  const [flag,setFlag] = useState(true)
+  const [flag,setFlag] = useState(true);
 
+  useEffect(() => {
+      ratingFun(ratingValue)
+  }, [ratingValue,ratingFun])
+  
 
   return (
     <div className="star-rating">

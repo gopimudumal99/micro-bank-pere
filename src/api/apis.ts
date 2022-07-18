@@ -1,10 +1,14 @@
 import axios from "axios";
-import {UserData,UserCredential} from "../Data/data"
+import {UserData,UserCredential} from "../Data/data";
 
 export const postData = async (data:UserData) => {
   const user = Object.assign(data,{rating:{current_account:0,payroll:0,payment:0}})
- await axios.post("http://localhost:3001/users", user);
-  alert("create account successfully")
+  try{
+    await axios.post("http://localhost:3001/users",user);
+    alert("create account successfully")
+  }catch(err){
+    console.log(err)
+  }
 };
 
 // feacth data by ID
@@ -20,3 +24,34 @@ export const getUserByLogin = async (data:UserCredential) =>{
     let user =  users.filter((user:any)=>user.email === data.email_phone && user.password ===data.password)
     return user
 }
+
+interface Rating{
+  current_account:number;
+  payroll:number;
+  payment:number;
+}
+
+export const updateRating = async (state:Rating,id:string)=>{
+  // if(type === "current_account"){
+    await axios.patch(`http://localhost:3001/users/${id}`,{
+      rating:{
+        current_account:state.current_account,
+        payroll:state.payroll,
+        payment:state.payment
+      }
+    })
+  }
+  // else if(type === "payroll"){
+  //   await axios.patch(`http://localhost:3001/users/${id}`,{
+  //     rating:{
+  //       payroll:rate
+  //     }
+  //   })
+  // }else if(type === "payment"){
+  //   await axios.patch(`http://localhost:3001/users/${id}`,{
+  //     rating:{
+  //       payment:rate
+  //     }
+  //   })
+  // }
+// }
