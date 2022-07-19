@@ -1,19 +1,22 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./ProfileCard.css"
 import {useNavigate} from "react-router-dom"
 import { useSelector } from 'react-redux';
 import {RootState} from "../../redux/store"
 import {useDispatch} from "react-redux"
 import {logout} from "../../redux/ProfileSlice"
+import { userContext } from "../../context/LoginContext";
 
 const ProfileCard:React.FC = () => {
+  let {loginChecker} = useContext(userContext)
+
   let dispatch = useDispatch()
   let navigate = useNavigate();
   const user = useSelector((state: RootState) => state)
 
   const logOut = ()=>{
     dispatch(logout())
-    navigate("/")
+    loginChecker()
   }
 
   return (
