@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import LoginComponent from "./components/Register/LoginComponent";
 import { userContext } from "./context/LoginContext";
 import ProtectedRoute from "./components/utils/ProtectedRoute";
+import ErrorPage from "./components/Error/ErrorPage";
 
 const App: FC = () => {
   let { isLogin } = useContext(userContext);
@@ -16,6 +17,7 @@ const App: FC = () => {
       <Routes>
         <Route path={"/"} element={<Register />} />
         <Route path="/login" element={<LoginComponent />} />
+        <Route path = "*" element={<ErrorPage/>} />
 
         <Route element={<ProtectedRoute isAuthenticated={isLogin} />}>
           <Route path="/dashboard" element={<Dashboard />} />

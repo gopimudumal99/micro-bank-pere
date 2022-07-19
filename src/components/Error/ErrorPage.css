@@ -1,0 +1,19 @@
+.not_fount_page{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.not_fount_page > h1{
+    color: red;
+    font-size: 250px;
+    margin-bottom: 0;
+}
+
+.not_fount_page >span{
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+}
