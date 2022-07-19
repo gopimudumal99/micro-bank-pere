@@ -1,5 +1,4 @@
 import React, { FC, useContext } from "react";
-
 import "./App.css";
 import Dashboard from "./components/Dashboard/Dashboard";
 import EditProfile from "./components/EditProfile/EditProfile";
