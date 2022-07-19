@@ -1,23 +1,23 @@
-import React,{useContext} from "react";
-import "./ProfileCard.css"
-import {useNavigate} from "react-router-dom"
-import { useSelector } from 'react-redux';
-import {RootState} from "../../redux/store"
-import {useDispatch} from "react-redux"
-import {logout} from "../../redux/ProfileSlice"
+import React, { useContext } from "react";
+import "./ProfileCard.css";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/ProfileSlice";
 import { userContext } from "../../context/LoginContext";
 
-const ProfileCard:React.FC = () => {
-  let {loginChecker} = useContext(userContext)
+const ProfileCard: React.FC = () => {
+  let { loginChecker } = useContext(userContext);
 
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
   let navigate = useNavigate();
-  const user = useSelector((state: RootState) => state)
+  const user = useSelector((state: RootState) => state);
 
-  const logOut = ()=>{
-    dispatch(logout())
-    loginChecker()
-  }
+  const logOut = () => {
+    dispatch(logout());
+    loginChecker();
+  };
 
   return (
     <div className="profile_popup">
@@ -32,9 +32,13 @@ const ProfileCard:React.FC = () => {
           </div>
         </div>
         <ul className="profile_main">
-          <li className="cursor" onClick={()=>navigate("/editProfile")}>Edit Profile</li>
+          <li className="cursor" onClick={() => navigate("/editProfile")}>
+            Edit Profile
+          </li>
           <li className="cursor">Settings</li>
-          <li className="cursor" onClick={logOut}>Logout</li>
+          <li className="cursor" onClick={logOut}>
+            Logout
+          </li>
         </ul>
       </div>
     </div>

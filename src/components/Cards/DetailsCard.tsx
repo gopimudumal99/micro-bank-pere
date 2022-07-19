@@ -1,15 +1,15 @@
 import React from "react";
 import CrossIcon from "../../assets/cross.png";
-import {MdDownload} from 'react-icons/md';
+import { MdDownload } from "react-icons/md";
 
-const DetailsCard:React.FC<any> = ({transDetails,hideShowDetails}) => {
+const DetailsCard: React.FC<any> = ({ transDetails, hideShowDetails }) => {
   return (
     <div className="details_card">
       <div className="transaction_info">
         <div className="transaction_header">
           <h3>Transaction Details</h3>
-          <div className="cursor" onClick={()=>hideShowDetails()}>
-          <img  src={CrossIcon} alt="" />
+          <div className="cursor" onClick={() => hideShowDetails()}>
+            <img src={CrossIcon} alt="" />
           </div>
         </div>
         <div className="transaction_main">
@@ -24,7 +24,15 @@ const DetailsCard:React.FC<any> = ({transDetails,hideShowDetails}) => {
             </div>
             <div className="transaction_left_item">
               <div>Status</div>
-              <div className={transDetails.status==="Approved"? 'status_green': 'status_red'}>{transDetails.status}</div>
+              <div
+                className={
+                  transDetails.status === "Approved"
+                    ? "status_green"
+                    : "status_red"
+                }
+              >
+                {transDetails.status}
+              </div>
             </div>
             <div className="transaction_left_item">
               <div>Comment</div>
@@ -41,8 +49,10 @@ const DetailsCard:React.FC<any> = ({transDetails,hideShowDetails}) => {
               <div>{transDetails.amount}</div>
             </div>
             <div className="transaction_right_item">
-                <div>Action</div>
-                <div className="cursor"><MdDownload color='red' size='23' / ></div>
+              <div>Action</div>
+              <div className="cursor">
+                <MdDownload color="red" size="23" />
+              </div>
             </div>
           </div>
         </div>

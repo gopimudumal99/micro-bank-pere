@@ -3,7 +3,7 @@
   margin: auto;
 }
 
-.edit_profile>div>h2{
+.edit_profile > div > h2 {
   font-size: 24px;
 }
 
@@ -62,10 +62,8 @@
   justify-content: flex-start;
 }
 
-.edit_from>form{
+.edit_from > form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
-

@@ -5,30 +5,30 @@ import walletIcon from "../assets/wallet.png";
 import investmentIcon from "../assets/investment.png";
 import taxPayIcon from "../assets/taxPayment.png";
 
-export interface UserCredential{
-  email_phone:string;
-  password:string;
+export interface UserCredential {
+  email_phone: string;
+  password: string;
 }
 
-export interface UserDataBase{
-  id:string;
-  full_name:string;
-  date_incorporation:string;
-  email:string;
-  password:string;
-  rating:{
-    current_account:number;
-    payroll:number;
-    payment:number;
-  }
+export interface UserDataBase {
+  id: string;
+  full_name: string;
+  date_incorporation: string;
+  email: string;
+  password: string;
+  rating: {
+    current_account: number;
+    payroll: number;
+    payment: number;
+  };
 }
 export interface UserData {
-  id:string;
-  full_name:string;
-  date_incorporation:string;
-  email:string;
-  password:string;
-  confirm_pass:string;
+  id: string;
+  full_name: string;
+  date_incorporation: string;
+  email: string;
+  password: string;
+  confirm_pass: string;
 }
 interface arrInt {
   text1: string;
@@ -38,7 +38,7 @@ interface arrInt {
 interface CurrentServiceIconArr {
   icon: any;
   text: string;
-  rating:number;
+  rating: number;
 }
 
 interface ServiceIconArr {
@@ -60,9 +60,9 @@ export const arr: arrInt[] = [
 ];
 
 export const current_services: CurrentServiceIconArr[] = [
-  { icon: bank, text: "Current Account",rating:3},
-  { icon: payroll, text: "Payroll",rating:2 },
-  { icon: paymentIcon, text: "Payment",rating:1 },
+  { icon: bank, text: "Current Account", rating: 3 },
+  { icon: payroll, text: "Payroll", rating: 2 },
+  { icon: paymentIcon, text: "Payment", rating: 1 },
 ];
 
 export const available_services: ServiceIconArr[] = [
