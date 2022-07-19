@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": "f9f5aa26-6e16-4356-958a-44735d52489b",
+      "full_name": "Gopi Mudumal",
+      "date_incorporation": "2022-07-18",
+      "email": "gopimudumal99@gmail.com",
+      "password": "123",
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 0,
+        "payroll": 0,
+        "payment": 0
+      }
+    },
+    {
+      "id": "c84f344a-8d0e-4c82-9436-51dd70d6ac9e",
+      "full_name": "shiva",
+      "date_incorporation": "2022-07-18",
+      "email": "shiva@gmail.com",
+      "password": "123",
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 5,
+        "payroll": 1,
+        "payment": 5
+      }
+    },
+    {
+      "id": "16313af7-8d55-4f2c-b5b1-1178dccbd712",
+      "full_name": "gopi",
+      "date_incorporation": "2022-07-18",
+      "email": "gopi@gmail.com",
+      "password": "123",
+      "confirm_pass": "123",
+      "rating": {
+        "current_account": 0,
+        "payroll": 0,
+        "payment": 0
+      }
+    }
+  ]
+}
