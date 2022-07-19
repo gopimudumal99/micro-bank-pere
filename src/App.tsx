@@ -11,7 +11,6 @@ import ProtectedRoute from "./components/utils/ProtectedRoute";
 
 const App: FC = () => {
   let { isLogin } = useContext(userContext);
-  console.log(isLogin);
   return (
     <div className="App">
       <Routes>
