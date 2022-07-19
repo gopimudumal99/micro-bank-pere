@@ -1,0 +1,69 @@
+.edit_profile {
+  width: 97vw;
+  margin: auto;
+}
+
+.edit_profile > div > h2 {
+  font-size: 24px;
+}
+
+.edit_main {
+  width: 100%;
+  /* height: 570px; */
+  background: #ffffff;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid white;
+}
+
+.photo_container {
+  width: 200px;
+  height: 255px;
+  margin: 25px 0 0 20px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.photo_div {
+  width: 87%;
+  height: 76%;
+  margin: 10px 12px;
+  background: #f2f2f2;
+  border: 1px dashed #e0e0e0;
+  position: relative;
+}
+
+.photo_div > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.photo_upload {
+  width: 175px;
+  height: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  text-align: center;
+  margin: 10px 12px;
+  font-size: 12px;
+  color: #d90429;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* input-box */
+.edit_from {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.edit_from > form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

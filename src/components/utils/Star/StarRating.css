@@ -1,0 +1,22 @@
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -15px;
+}
+
+#textBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#textBtn > span {
+  font-size: 25px;
+}
+.on {
+  color: #0a8b1f;
+}
+.off {
+  color: #ccc;
+}

@@ -1,0 +1,64 @@
+nav {
+  width: 100vw;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  position: relative;
+}
+
+nav > .logo {
+  width: 160px;
+  height: 20px;
+  border-right: 1px solid #c4c4c4;
+  padding: 10px;
+  align-self: center;
+}
+
+nav > .title {
+  flex: 3;
+  margin-left: 30px;
+}
+
+nav > .nav-right {
+  width: 120px;
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.notifyIcon,
+.downLogo {
+  cursor: pointer;
+}
+
+.notifyIcon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.downLogo {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.profileImg {
+  width: 25px;
+  height: 25px;
+  padding: 8px 8px 8px 8px;
+  color: white;
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 400;
+  background-color: #d90429;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
