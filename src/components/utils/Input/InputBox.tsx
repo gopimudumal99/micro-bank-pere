@@ -22,6 +22,7 @@ const InputBox:React.FC<props> = ({type,label,isPass,id,value,handleChange}) => 
           setShowPass("password")
         }
     }
+    
   return (
     <div className='input_container'>
         <label htmlFor={id}>{label}</label>

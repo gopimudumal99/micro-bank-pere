@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState,useContext } from 'react';
 import Button from '../utils/Button/Button';
 import InputBox from '../utils/Input/InputBox';
 import {useNavigate} from 'react-router-dom';
@@ -6,9 +6,12 @@ import {getUserByLogin} from "../../api/apis";
 import {UserCredential} from "../../Data/data";
 import {useDispatch } from 'react-redux';
 import{addProfile} from "../../redux/ProfileSlice";
+import { userContext } from '../../context/LoginContext';
 
 const LoginComponent:React.FC = () =>{
     let user:UserCredential = {email_phone:"",password:""}
+    let {loginChecker} = useContext(userContext)
+    
     const dispatch = useDispatch();
 
     const [state,setState] = useState<UserCredential>(user)
@@ -28,6 +31,7 @@ const LoginComponent:React.FC = () =>{
        let user = await getUserByLogin(state)
        if(user.length > 0){
             dispatch(addProfile(user[0]))
+            loginChecker()
             navigate("/dashboard")
        }else{
         alert("invalid credential please try again")
